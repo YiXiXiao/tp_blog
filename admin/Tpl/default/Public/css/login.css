@@ -1,0 +1,66 @@
+#index_login {
+	height:696px;
+	background:url('../images/login.jpg') no-repeat left center;
+	position:relative;
+}
+#index_login div#username {
+	position:absolute;
+	left:816px;
+	top:325px;
+}
+#index_login div#password {
+	position:absolute;
+	left:816px;
+	top:358px;
+}
+#index_login div#submit {
+	position:absolute;
+	left:816px;
+	top:385px;
+	width:180px;
+	height:22px;
+	cursor:pointer;
+}
+#index_login div input.text{
+	width:180px;
+	height:20px;
+	line-height:20px;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

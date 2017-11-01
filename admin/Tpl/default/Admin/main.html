@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>sidebar</title>
+<link rel="stylesheet" type="text/css" href="{$Public}/css/admin.css"/>
+</head>
+<body>
+
+	<div id="main_index">
+		<p class="theme">我的个人信息</p>
+		
+		<p>您好，{$oneAdmin.username}</p>
+		
+		<p>所属角色：{$oneLevel.name}</p>
+		
+		<p>上次登录时间：{$oneAdmin.lastdate}</p>
+		
+		<p>上次登录IP：{$oneAdmin.lastip}</p>
+		<p class="theme">系统信息</p>
+		
+		<p>MYSQL支持：<?php echo function_exists (mysql_close)?"是":"否"; ?></p>
+		
+		<p>服务器操作系统：<?PHP echo PHP_OS; ?></p>
+		
+		<p>服务器信息：<?PHP echo $_SERVER ['SERVER_SOFTWARE'];?></p>
+		
+		<p>最大上传文件：<?PHP echo get_cfg_var ("upload_max_filesize")?get_cfg_var ("upload_max_filesize"):"不允许上传附件"; ?></p>
+		<p class="theme">技术支持</p>
+		
+		<p>版权所有：郑州木鱼网络</p>	
+	</div>
+	
+</body>
+</html>

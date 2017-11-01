@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>main</title>
+<link rel="stylesheet" type="text/css" href="{$Public}/css/article.css"/>
+</head>
+
+<body>
+	<div class="map">
+		首页管理&gt;&gt;报价单管理&gt;&gt;<strong id="title">{$title}</strong>
+	</div>
+	
+	<ul>
+		<li class="selected"><a href="__URL__/index" class="selected">报价单列表</a></li>
+		<li><a href="__URL__/addShow">新增报价单</a></li>
+	</ul>
+	<form method="post" action="__URL__/add" enctype="multipart/form-data">
+	<input type="hidden" name="ordertime" value="{$date}" class="text"/>
+	<div class="action">新增报价单</div>
+	<div class="addlist">录入日期：&nbsp;{$date|substr=0,10}</div>
+	<div class="addlist">订单编号：&nbsp;<input type="text" name="sn" value="{$sn}" class="text"/></div>
+	<div class="addlist">发票抬头：&nbsp;<input type="text" name="header" value="" class="text"/></div>
+	<div class="addlist">订&nbsp;货&nbsp;人：&nbsp;<input type="text" name="order_name" value="" class="text"/></div>
+	<div class="addlist">电　　话：&nbsp;<input type="text" name="phone" value="" class="text"/></div>
+	<div class="addlist">邮政编码：&nbsp;<input type="text" name="code" value="" class="text"/></div>
+	<div class="addlist">邮递地址：&nbsp;<input type="text" name="address" value="" class="text"/></div>
+	<div class="addlist">汇款方式：
+		<select name="paystyle">
+            <option value="0">公司[未到]</option>
+            <option value="1">公司帐户</option>
+            <option value="2">工商银行</option>
+            <option value="3">建设银行</option>
+            <option value="4">农业银行</option>
+            <option value="5">货到付款</option>
+			<option value="6">现金支付</option>
+            <option value="7">其它</option>
+		</select>
+	</div>
+
+
+	<div class="addlist">金　　额：&nbsp;<input type="text" name="cash" value="" class="text"/></div>
+	
+	<div class="addlist">跟&nbsp;单&nbsp;人：&nbsp;<input type="text" name="monitor" value="" class="text"/></div>
+	<div class="addlist">文件位置：&nbsp;<input type="file" name="file" value="" class="text"/></div>
+	<div class="addlist">快递公司：
+		<select name="ems">
+            <option value="0">暂未发</option>
+            <option value="1">EMS</option>
+            <option value="2">圆通</option>
+            <option value="3">中通</option>
+            <option value="4">宅急送</option>
+            <option value="5">韵达</option>
+            <option value="6">一统</option>
+            <option value="7">申通</option>
+            <option value="8">其它</option>
+		</select>
+	</div>
+	<div class="addlist">发货单号：&nbsp;<input type="text" name="send_sn" value="" class="text"/></div>
+	<div class="addlist" style="height:auto;">备　　注：&nbsp;<textarea name="desc"></textarea></div>
+	
+	<div class="addlist" style="margin:15px 0 0 0;padding:0 0 0 200px;"><input type="submit" name="send" value="确认新增" class="submit"/></div>
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

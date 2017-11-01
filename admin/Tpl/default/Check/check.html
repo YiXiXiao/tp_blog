@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>main</title>
+<link rel="stylesheet" type="text/css" href="{$Public}/css/admin.css"/>
+</head>
+<body id="main">
+	<div class="map">
+		首页管理&gt;&gt;支票账目管理&gt;&gt;<strong id="title">{$title}</strong>
+	</div>
+	
+	<ol>
+		<li class="selected"><a href="__URL__/index" class="selected">支票账目列表</a></li>
+		<li><a href="__URL__/addShow">新增支票账目</a></li>
+	</ol>
+	
+	<form method="post" action="">
+	<table cellspacing="0">
+		<tr><th style="width:200px;">记账日期</th><th>开票单位</th><th>支票号码</th><th>转入单位</th><th>金额</th><th>类别</th><th>说明</th><th>操作</th></tr>
+		
+		<volist name="checkList" id="vo">
+		<tr>
+		<td>{$vo.date|substr=0,10}</td>
+		<td>{$vo.company}</td>
+		<td>{$vo.sn}</td>
+		<td>{$vo.recompany}</td>
+		<td>{$vo.cash}</td>
+		<td>{$vo.kind}</td>
+		<td>{$vo.desc}</td>
+		<td><a href="__URL__/show/id/{$vo.id}">修改</a> | <a href="__URL__/delete/id/{$vo.id}" onclick="return confirm('你真的要删除该现金账目么?')? true : false">删除</a></td>
+		</tr>
+		</volist>
+		
+	</table>
+	</form>
+	<div id="page">{$page}</div>
+
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

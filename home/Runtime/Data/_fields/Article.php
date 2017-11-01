@@ -1,0 +1,25 @@
+<?php
+return array (
+  0 => 'id',
+  1 => 'title',
+  2 => 'seo_title',
+  3 => 'seo_desc',
+  4 => 'thumb',
+  5 => 'description',
+  6 => 'body',
+  7 => 'reid',
+  8 => 'flag',
+  9 => 'click',
+  10 => 'writer',
+  11 => 'source',
+  12 => 'goodpost',
+  13 => 'badpost',
+  14 => 'keywords',
+  15 => 'pubdate',
+  16 => 'lastmod',
+  17 => 'userip',
+  18 => 'rbac',
+  '_autoinc' => true,
+  '_pk' => 'id',
+);
+?>

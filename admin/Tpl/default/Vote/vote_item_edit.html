@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>main</title>
+<link rel="stylesheet" type="text/css" href="{$Public}/css/article.css"/>
+</head>
+
+<body>
+	<div class="map">
+		内容管理&gt;&gt;投票模块管理&gt;&gt;<strong id="title">{$title}</strong>
+	</div>
+	
+	<ul>
+		<li class="selected"><a href="__URL__/index" class="selected">投票主题列表</a></li>
+		<li><a href="__URL__/addShow">新增投票主题</a></li>
+		<li><a href="__URL__/showItem/id/{$oneVote.id}">修改投票项目</a></li>
+	</ul>
+	<form method="post" action="__URL__/modifyItem">
+	<input type="hidden" name="id" value="{$oneVote.id}"/>
+	<div class="action">修改一条项目</div>
+	<div class="addlist">项目名称：&nbsp;<input type="text" name="title" value="{$oneVote.title}" class="text"/></div>
+	<div class="addlist" style="height:auto;">项目描述：&nbsp;<textarea name="info">{$oneVote.info}</textarea></div>
+	
+	<div class="addlist" style="margin:15px 0 0 0;padding:0 0 0 200px;"><input type="submit" name="send" value="修改项目" class="submit"/></div>
+	</form>
+
+</body>
+</html>

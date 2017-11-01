@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>main</title>
+<link rel="stylesheet" type="text/css" href="{$Public}/css/admin.css"/>
+</head>
+<body id="main">
+	<div class="map">
+		首页管理&gt;&gt;报价单管理&gt;&gt;<strong id="title">{$title}</strong>
+	</div>
+	
+	<ol>
+		<li><a href="__URL__/index" class="selected">报价单列表</a></li>
+		<li><a href="__URL__/addShow" class="selected">新增报价单</a></li>
+	</ol>
+	
+	<form method="post" action="">
+	<table cellspacing="0">
+		<tr><th style="width:150px;">录入日期</th><th style="width:150px;">单号</th><th>发票抬头</th><th>联系人</th><th>汇款方式</th><th>金额</th><th>跟单人</th><th>快递</th><th>发货单号</th><th>文件下载</th><th style="width:150px;">操作</th></tr>
+		
+		<volist name="sheetList" id="vo">
+		<tr>
+		<td>{$vo.ordertime|substr=0,10}</td>
+		<td>{$vo.sn}</td>
+		<td>{$vo.header}</td>
+		<td>{$vo.order_name}</td>
+		<td>{$vo.paystyle}</td>
+		<td>{$vo.cash}</td>
+		<td>{$vo.monitor}</td>
+		<td>{$vo.ems}</td>
+		<td>{$vo.send_sn}</td>
+		<td><a href="__ROOT__/Public/Uploads/{$vo.file}">文件下载</a></td>
+		<td><a href="__URL__/show/id/{$vo.id}">修改</a> | <a href="__URL__/delete/id/{$vo.id}" onclick="return confirm('你真的要删除该订单么?')? true : false">删除</a></td>
+		</tr>
+		</volist>
+		
+	</table>
+	</form>
+	<div id="page">{$page}</div>
+
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

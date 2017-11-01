@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>main</title>
+<link rel="stylesheet" type="text/css" href="{$Public}/css/admin.css"/>
+</head>
+<body id="main">
+	<div class="map">
+		内容管理&gt;&gt;投票模块管理&gt;&gt;<strong id="title">{$title}</strong>
+	</div>
+	
+	<ol>
+		<li class="selected"><a href="__URL__/index" class="selected">投票主题列表</a></li>
+		<li><a href="__URL__/addShow">新增投票主题</a></li>
+	</ol>
+	
+	<form method="post" action="">
+	<table cellspacing="0">
+		<tr><th>主题ID</th><th style="width:300px;">标题名称</th><th>投票项目</th><th>前台显示</th><th>操作</th></tr>
+		
+		<volist name="voteList" id="vo">
+		<tr>
+		<td>{$vo.id}</td>
+		<td>{$vo.title}</td>
+		<td><a href="__URL__/detail/id/{$vo.id}">查看</a> | <a href="__URL__/addItemShow/id/{$vo.id}">增加项目</a></td>
+		<td>{$vo.state}</td>
+		<td><a href="__URL__/show/id/{$vo.id}">修改</a> | <a href="__URL__/delete/id/{$vo.id}" onclick="return confirm('你真的要删除该投票主题么?')? true : false">删除</a></td>
+		</tr>
+		</volist>
+		
+	</table>
+	</form>
+	<div id="page">{$page}</div>
+
+	
+</body>
+</html>

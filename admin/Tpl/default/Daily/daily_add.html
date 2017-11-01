@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>main</title>
+<link rel="stylesheet" type="text/css" href="{$Public}/css/article.css"/>
+</head>
+
+<body>
+	<div class="map">
+		首页管理&gt;&gt;日常开支管理&gt;&gt;<strong id="title">{$title}</strong>
+	</div>
+	
+	<ul>
+		<li class="selected"><a href="__URL__/index" class="selected">日常开支列表</a></li>
+		<li><a href="__URL__/addShow">新增日常开支</a></li>
+	</ul>
+	<form method="post" action="__URL__/add">
+	<input type="hidden" name="date" value="{$date}"/>
+	<div class="action">新增一条新日常开支</div>
+	<div class="addlist">记账日期：&nbsp;{$date}</div>
+	<div class="addlist">项　　目：&nbsp;<input type="text" name="name" value="" class="text"/></div>
+	<div class="addlist">支付方式：
+		<select name="paystyle">
+           <option value="0">银行卡支付</option>
+           <option value="1">现金支付</option>
+           <option value="2">恒元启天公司帐</option>
+           <option value="3">世纪奥科公司帐</option>
+		</select>
+	</div>
+	<div class="addlist">支　　出：&nbsp;<input type="text" name="cash_out" value="" class="text"/></div>
+	<div class="addlist" style="height:auto;">备　　注：&nbsp;<textarea name="desc"></textarea></div>
+
+	
+	<div class="addlist" style="margin:15px 0 0 0;padding:0 0 0 200px;"><input type="submit" name="send" value="确定新增" class="submit"/></div>
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

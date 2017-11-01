@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>main</title>
+<link rel="stylesheet" type="text/css" href="{$Public}/css/admin.css"/>
+</head>
+<body id="main">
+	<div class="map">
+		内容管理&gt;&gt;投票模块管理&gt;&gt;<strong id="title">{$title}</strong>
+	</div>
+	
+	<ol>
+		<li class="selected"><a href="__URL__/index" class="selected">投票主题列表</a></li>
+		<li><a href="__URL__/addShow">新增投票主题</a></li>
+		<li><a href="__URL__/detail/id/{$oneVote.id}">投票项目列表</a></li>
+	</ol>
+	
+	<form method="post" action="">
+	<table cellspacing="0">
+		<tr><th>项目ID</th><th style="width:300px;">投票项目</th><th>项目投票数</th><th>操作</th></tr>
+		
+		<volist name="itemList" id="vo">
+		<tr>
+		<td>{$vo.id}</td>
+		<td>{$vo.title}</td>
+		<td>{$vo.count}</td>
+		<td><a href="__URL__/showItem/id/{$vo.id}">修改</a> | <a href="__URL__/deleteItem/id/{$vo.id}" onclick="return confirm('你真的要删除该投票项目么?')? true : false">删除</a></td>
+		</tr>
+		</volist>
+		<tr>
+			<td colspan="4">项目所属主题：{$oneVote.title}　  <a href="__URL__/addItemShow/id/{$oneVote.id}">增加投票项目</a></td>
+		</tr>
+	</table>
+	</form>
+
+	
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>商品管理</title>
+<link href="__ROOT__/ueditor/themes/default/css/umeditor.min.css" type="text/css" rel="stylesheet"/>
+<style type="text/css">
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+img {
+	border:none;
+}
+.STYLE1 {font-size: 12px}
+.STYLE3 {font-size: 12px; font-weight: bold; }
+.STYLE4 {
+	color: #03515d;
+	font-size: 12px;
+}
+a {
+	text-decoration:none;
+	color:#033D61;
+}
+div.page {
+	height:25px;
+	line-height:25px;
+	font-size:12px;
+}
+div.page a {
+	border:1px solid #1877ad;
+	font-size:12px;
+	padding:3px 3px 1px 3px;
+	margin:0;
+}
+td {
+	font-size:12px;
+}
+table.pub_table {
+	border-collapse:collapse;
+}
+table.pub_table tr td {
+	height:20px;
+	line-height:20px;
+	padding:2px 5px;
+	border:none;
+	border-bottom:1px dashed #ccc;
+}
+input.text {
+	width:400px;
+}
+input.submit {
+	cursor:pointer;
+}
+td select {
+	height:20px;
+	line-height:20px;
+	width:400px;
+	font-size:12px;
+}
+textarea {
+	font-size:12px;
+	padding:2px 0 0 5px;
+}
+#thumb {
+	width:10%;
+	height:10%;
+}
+</style>
+</head>
+
+<body>
+<form method="post" action="__URL__/modify" enctype="multipart/form-data">
+<input type="hidden" name="id" value="{$oneGood.id}"/>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="30" background="{$Public}/images/tab_05.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="12" height="30"><img src="{$Public}/images/tab_03.gif" width="12" height="30" /></td>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="46%" valign="middle"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="5%"><div align="center"><img src="{$Public}/images/tb.gif" width="16" height="16" /></div></td>
+                <td width="95%" class="STYLE1"><span class="STYLE3">你当前的位置</span>：[商品管理]-[<a href="__URL__/show/id/{$oneGood.id}">修改商品</a>]</td>
+              </tr>
+            </table></td>
+            <td width="54%"><table border="0" align="right" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width="60">&nbsp;</td>
+                <td width="80"><table width="90%" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td class="STYLE1"><div align="center"><img src="{$Public}/images/22.gif" width="14" height="14" /></div></td>
+                    <td class="STYLE1"><div align="center"><a href="__URL__/index">商品列表</a></div></td>
+                  </tr>
+                </table></td>
+                <td width="60">&nbsp;</td>
+                <td width="52">&nbsp;</td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+        <td width="16"><img src="{$Public}/images/tab_07.gif" width="16" height="30"/></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="8" background="{$Public}/images/tab_12.gif">&nbsp;</td>
+        <td><table class="pub_table" width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="b5d6e6" onmouseover="changeto()"  onmouseout="changeback()">
+          <tr>
+         	 <td style="border:none;" colspan="2" height="22" background="{$Public}/images/bg2.gif" bgcolor="#FFFFFF" class="STYLE1"><div style="padding:0 0 0 150px;" align="left">&nbsp;</div></td>
+          </tr>
+
+          <tr>
+           	<td width="8%" bgcolor="#FFFFFF"><div align="right"><span class="STYLE1">商品名称：</span></div></td>
+            <td bgcolor="#FFFFFF"><div align="left"><input type="text" name="name" value="{$oneGood.name}" class="text"/><font style="color:red;">(商品名称必填)</font></div></td>
+          </tr>
+          
+          <tr>
+           	<td width="8%" bgcolor="#FFFFFF"><div align="right"><span class="STYLE1">商品编号：</span></div></td>
+            <td bgcolor="#FFFFFF"><div align="left"><input type="text" name="sn" value="{$oneGood.sn}" class="text"/><font style="color:red;">(如果不填系统自动生成)</font></div></td>
+          </tr>
+          
+          <tr>
+           	<td width="8%" bgcolor="#FFFFFF"><div align="right"><span class="STYLE1">缩略图片：</span></div></td>
+            <td bgcolor="#FFFFFF"><div align="left"><input type="file" name="thumb" value="" class="text"/></div></td>
+          </tr>
+          
+          <tr>
+           	<td width="8%" bgcolor="#FFFFFF"><div align="right"><span class="STYLE1">&nbsp;</span></div></td>
+            <td bgcolor="#FFFFFF"><div align="left"><img id="thumb" src="__ROOT__/Public/Uploads/{$oneGood.thumb}"/></div></td>
+          </tr>
+          
+          <tr>
+           	<td width="8%" bgcolor="#FFFFFF"><div align="right"><span class="STYLE1">图片大小：</span></div></td>
+            <td bgcolor="#FFFFFF"><div align="left">宽&nbsp;<input type="text" name="width" class="text" style="width:60px;" value="{$width}"/>　 高&nbsp;<input type="text" style="width:60px;" class="text" name="height" value="{$height}"/></div></td>
+          </tr>
+          
+          <tr>
+           	<td width="8%" bgcolor="#FFFFFF"><div align="right"><span class="STYLE1">所属分类：</span></div></td>
+            <td bgcolor="#FFFFFF"><div align="left">
+            	<select name="reid">
+					<option value="0">请选择商品所属分类</option>
+					<volist name="navList" id="vo">
+					<option <php>if($vo['id']==$oneGood['reid']){echo 'selected="selected"';}</php> value="{$vo.id}"><?php echo str_repeat('&nbsp;',2*$vo['level']);?>{$vo.name}</option>
+					</volist>
+				</select><font style="color:red;">(商品分类必选)</font>
+            </div></td>
+          </tr>
+          
+          <tr>
+           	<td width="8%" bgcolor="#FFFFFF"><div align="right"><span class="STYLE1">定义属性：</span></div></td>
+            <td bgcolor="#FFFFFF"><div align="left">
+            	<input type="checkbox" name="flag[]" value="h" <?php if(in_array('h',$goodFlagArr)){echo 'checked="checked"';}?>/> 热卖　
+				<input type="checkbox" name="flag[]" value="c" <?php if(in_array('c',$goodFlagArr)){echo 'checked="checked"';}?>/> 推荐　
+				<input type="checkbox" name="flag[]" value="n" <?php if(in_array('n',$goodFlagArr)){echo 'checked="checked"';}?>/> 新品　
+				<input type="checkbox" name="flag[]" value="s" <?php if(in_array('s',$goodFlagArr)){echo 'checked="checked"';}?>/> 精品　
+            </div></td>
+          </tr>
+          
+          <tr>
+           	<td width="8%" bgcolor="#FFFFFF"><div align="right"><span class="STYLE1">市&nbsp;场&nbsp;价：</span></div></td>
+            <td bgcolor="#FFFFFF"><div align="left">
+            	<input type="text" value="{$oneGood.market_price}" name="market_price" class="text" style="width:120px;"/>&nbsp;元&nbsp;&nbsp;
+				会员价：&nbsp;<input value="{$oneGood.vip_price}" type="text" name="vip_price" class="text" style="width:120px;"/>&nbsp;元&nbsp;&nbsp;
+				本店价：&nbsp;<input value="{$oneGood.shop_price}" type="text" name="shop_price" class="text" style="width:120px;"/>&nbsp;元&nbsp;&nbsp;
+            </div></td>
+          </tr>
+          
+          <tr>
+           	<td width="8%" bgcolor="#FFFFFF"><div align="right"><span class="STYLE1">库存数量：</span></div></td>
+            <td bgcolor="#FFFFFF"><div align="left"><input type="text" name="num" style="width:120px;" value="{$oneGood.num}" class="text"/></div></td>
+          </tr>
+          
+          <tr>
+           	<td width="8%" bgcolor="#FFFFFF"><div align="right"><span class="STYLE1">颜　　色：</span></div></td>
+            <td bgcolor="#FFFFFF"><div align="left"><input type="text" name="color" style="width:120px;" value="{$oneGood.color}" class="text"/></div></td>
+          </tr>
+          
+          <tr>
+           	<td width="8%" bgcolor="#FFFFFF"><div align="right"><span class="STYLE1">尺　　码：</span></div></td>
+            <td bgcolor="#FFFFFF"><div align="left"><input type="text" name="size" value="{$oneGood.size}" class="text"/><font style="color:red;">(多个尺码请用英文","分隔)</font></div></td>
+          </tr>
+          
+          <tr>
+           	<td width="8%" bgcolor="#FFFFFF"><div align="right"><span class="STYLE1">关&nbsp;键&nbsp;词：</span></div></td>
+            <td bgcolor="#FFFFFF"><div align="left"><input type="text" name="keywords" value="{$oneGood.keywords}" class="text"/></div></td>
+          </tr>
+          
+          <tr>
+           	<td width="8%" bgcolor="#FFFFFF"><div align="right"><span class="STYLE1">商品简介：</span></div></td>
+            <td bgcolor="#FFFFFF"><div align="left"><textarea name="description" style="width:400px;height:80px;">{$oneGood.description}</textarea></div></td>
+          </tr>
+          
+          <tr>
+           	<td width="8%" bgcolor="#FFFFFF"><div align="right"><span class="STYLE1">商品描述：</span></div></td>
+            <td bgcolor="#FFFFFF"><div align="left"><textarea name="body" id="body" class="ckeditor">{$oneGood.body}</textarea></div></td>
+          </tr>
+          
+          <tr>
+           	<td width="8%" bgcolor="#FFFFFF"><div align="right"><span class="STYLE1">商品图集：</span></div></td>
+            <td bgcolor="#FFFFFF"><div align="left"><textarea name="photo" id="photo">{$oneGood.photo}</textarea></div></td>
+          </tr>
+
+        </table></td>
+        <td width="8" background="{$Public}/images/tab_15.gif">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="35" background="{$Public}/images/tab_19.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="12" height="35"><img src="{$Public}/images/tab_18.gif" width="12" height="35" /></td>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="STYLE4"><input type="submit" name="send" value="保存" class="submit" style="margin-left:100px;"/></td>
+            <td><table border="0" align="right" cellpadding="0" cellspacing="0">
+                <tr style="height:20px;line-height:20px;">
+                  <td colspan="4">
+                  	<div class="page">&nbsp;</div>
+                  </td>
+                  <td width="100"><div align="center">&nbsp;</div></td>
+                  <td width="40">&nbsp;</td>
+                </tr>
+            </table></td>
+          </tr>
+        </table></td>
+        <td width="16"><img src="{$Public}/images/tab_20.gif" width="16" height="35" /></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</form>
+
+<script type="text/javascript" src="{$Public}/js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="__ROOT__/ueditor/umeditor.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="__ROOT__/ueditor/umeditor.config.js"></script>
+
+<script type="text/javascript">
+var ue = UM.getEditor('body',{
+    initialFrameHeight:300,
+    initialFrameWidth:900
+});
+var ue = UM.getEditor('photo',{
+    initialFrameHeight:300,
+    initialFrameWidth:900
+});
+</script>
+</body>
+</html>

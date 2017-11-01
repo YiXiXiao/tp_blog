@@ -1,0 +1,15 @@
+table {
+	width:600px;
+	border-collapse:collapse;	
+	margin:0 0 0 65px;
+}
+table tr {
+	
+}
+table tr td {
+	border:1px solid #ccc;
+	text-align:center;
+}
+table tr th {
+	
+}

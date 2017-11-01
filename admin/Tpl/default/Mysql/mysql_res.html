@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>数据库管理</title>
+<style type="text/css">
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.STYLE1 {font-size: 12px}
+.STYLE3 {font-size: 12px; font-weight: bold; }
+.STYLE4 {
+	color: #03515d;
+	font-size: 12px;
+}
+a {
+	text-decoration:none;
+	color:#033D61;
+}
+div.page {
+	height:25px;
+	line-height:25px;
+	font-size:12px;
+}
+div.page a {
+	border:1px solid #1877ad;
+	font-size:12px;
+	padding:3px 3px 1px 3px;
+	margin:0;
+}
+</style>
+
+</head>
+
+<body>
+<form method="post" action="__URL__/restore" enctype="multipart/form-data">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="30" background="{$Public}/images/tab_05.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="12" height="30"><img src="{$Public}/images/tab_03.gif" width="12" height="30" /></td>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="46%" valign="middle"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="5%"><div align="center"><img src="{$Public}/images/tb.gif" width="16" height="16" /></div></td>
+                <td width="95%" class="STYLE1"><span class="STYLE3">你当前的位置</span>：[数据库管理]-[<a href="__URL__/resShow">数据库还原</a>]</td>
+              </tr>
+            </table></td>
+            <td width="54%"><table border="0" align="right" cellpadding="0" cellspacing="0">
+              <tr>
+              	<td width="80">&nbsp;</td>
+                <td width="90"><table width="90%" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td class="STYLE1"><div align="center"><img src="{$Public}/images/22.gif" width="14" height="14" /></div></td>
+                    <td class="STYLE1"><div align="center"><a href="__URL__/index">数据库备份</a></div></td>
+                  </tr>
+                </table></td>
+                <td width="60">&nbsp;</td>
+                <td width="52">&nbsp;</td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+        <td width="16"><img src="{$Public}/images/tab_07.gif" width="16" height="30" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="8" background="{$Public}/images/tab_12.gif">&nbsp;</td>
+        <td><table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="b5d6e6" onmouseover="changeto()"  onmouseout="changeback()">
+          <tr>
+            <td width="5%" height="22" background="{$Public}/images/bg2.gif" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">编号ID</span></div></td>
+            <td width="14%" height="22" background="{$Public}/images/bg2.gif" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">文件名</span></div></td>
+            <td width="14%" height="22" background="{$Public}/images/bg2.gif" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">文件大小</span></div></td>
+            <td width="15%" height="22" background="{$Public}/images/bg2.gif" bgcolor="#FFFFFF" class="STYLE1"><div align="center">备份时间</div></td>
+            <td width="15%" height="22" background="{$Public}/images/bg2.gif" bgcolor="#FFFFFF" class="STYLE1"><div align="center">操作</div></td>
+          </tr>
+          
+          <volist name="fileList" id="vo">
+          <tr>
+            <td height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">{$vo.id}</span></div></td>
+            <td height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">{$vo.name}</span></div></td>
+            <td bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">{$vo.size}</span></div></td>
+            <td height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">{$vo.mtime}</span></div></td>
+            <td height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">
+            	<a href="__URL__/restoreget/id/{$vo.name}" onclick="return confirm('你真的要还原整个数据库吗?');"><img src="{$Public}/images/edt.gif" width="16" height="16" />还原</a>&nbsp; &nbsp;
+            	<a href="__URL__/delete/id/{$vo.name}" onclick="return confirm('你真的要删除该备份数据库吗?');"><img src="{$Public}/images/del.gif" width="16" height="16" />删除</a>&nbsp;&nbsp;
+            	<a href="__URL__/download/id/{$vo.name}"><img src="{$Public}/images/del.gif" width="16" height="16" />下载</a></span></div></td>
+          </tr>
+          </volist>
+          
+		  <tr>
+            <td height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">&nbsp;</span></div></td>
+
+            <td style="padding:2px 0;" colspan="3" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">上传SQL文件:<input type="file" name="sql"/><input type="submit" name="bake" value="上传" style="cursor:pointer;"/></span></div></td>
+
+            <td height="20" bgcolor="#FFFFFF"><div align="center"><span class="STYLE1">&nbsp;</span></div></td>
+          </tr>
+
+        </table></td>
+        <td width="8" background="{$Public}/images/tab_15.gif">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="35" background="{$Public}/images/tab_19.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="12" height="35"><img src="{$Public}/images/tab_18.gif" width="12" height="35" /></td>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="STYLE4">&nbsp;&nbsp;</td>
+            <td><table border="0" align="right" cellpadding="0" cellspacing="0">
+                <tr style="height:20px;line-height:20px;">
+                  <td colspan="4">
+                  	<div class="page">{$page}</div>
+                  </td>
+                  <td width="100"><div align="center">&nbsp;</div></td>
+                  <td width="40">&nbsp;</td>
+                </tr>
+            </table></td>
+          </tr>
+        </table></td>
+        <td width="16"><img src="{$Public}/images/tab_20.gif" width="16" height="35" /></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

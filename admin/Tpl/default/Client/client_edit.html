@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>main</title>
+<link rel="stylesheet" type="text/css" href="{$Public}/css/article.css"/>
+</head>
+
+<body>
+	<div class="map">
+		首页管理&gt;&gt;客户信息管理&gt;&gt;<strong id="title">{$title}</strong>
+	</div>
+	
+	<ul>
+		<li class="selected"><a href="__URL__/index" class="selected">客户列表</a></li>
+		<li><a href="__URL__/addShow">新增客户</a></li>
+	</ul>
+	<form method="post" action="__URL__/add">
+	<div class="action">新增一条客户信息</div>
+	<div class="addlist">客户名称：&nbsp;<input type="text" name="username" value="" class="text"/></div>
+	<div class="addlist">性　　别：&nbsp;<input type="radio" checked="checked" name="sex" value="0"/>&nbsp;男　&nbsp;<input type="radio" name="sex" value="1"/>&nbsp;女</div>
+	<div class="addlist">手　　机：&nbsp;<input type="text" name="mobile" value="" class="text"/></div>
+	<div class="addlist">Q&nbsp;Q号&nbsp;码：&nbsp;<input type="text" name="qq" value="" class="text"/></div>
+	<div class="addlist">联系电话：&nbsp;<input type="text" name="phone" value="" class="text"/></div>
+	<div class="addlist">传　　真：&nbsp;<input type="text" name="fax" value="" class="text"/></div>
+	<div class="addlist">电子邮件：&nbsp;<input type="text" name="email" value="" class="text"/></div>
+	<div class="addlist">邮　　编：&nbsp;<input type="text" name="code" value="" class="text"/></div>
+
+
+	<div class="addlist">所在单位：&nbsp;<input type="text" name="company" value="" class="text"/></div>
+	
+	<div class="addlist">收货地址：&nbsp;<input type="text" name="address" value="" class="text"/></div>
+	
+	
+	<div class="addlist" style="margin:15px 0 0 0;padding:0 0 0 200px;"><input type="submit" name="send" value="新增客户" class="submit"/></div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<div id="secondary" class="widget-area" role="complementary">
+	<aside id="search-2" class="widget widget_search">
+		<form role="search" method="get" id="searchform" action="__APP__/Home/search">
+		<div>
+			<label class="screen-reader-text" for="s">搜索：</label>
+			<input onfocus="if(this.value=='搜索神马的最有爱了'){this.value='';}" onblur="if(this.value==''){this.value='搜索神马的最有爱了';}" type="text" value="搜索神马的最有爱了" name="keywords" id="s" style="color:#aaa;"/>
+			<input type="submit" id="searchsubmit" value="搜索" />
+		</div>
+		</form>
+	</aside>		
+	<aside id="recent-posts-2" class="widget widget_recent_entries">		
+		<h3 class="widget-title">近期文章</h3>		
+		<ul>
+			<volist name="rightList" id="vo">
+			<li><font style="color:#7a7a7a;">[{$i}]</font>&nbsp;<a href="__APP__/Home/blog/id/{$vo.id}" title="{$vo.title}">{$vo.title|msubstr=0,22}</a></li>
+			</volist>
+		</ul>
+	</aside>
+	<aside id="recent-comments-2" class="widget widget_recent_comments">
+		<h3 class="widget-title">近期评论</h3>
+		<ul id="recentcomments">
+			<volist name="recentCommonet" id="vo">
+			<li class="recentcomments">{$vo.uname} 发表在《<a href="__APP__/Home/blog/id/{$vo.aid}" title="{$vo.atitle}">{$vo.atitle|msubstr=0,13}</a>》</li>
+			</volist>
+		</ul>
+	</aside>
+	<aside id="archives-2" class="widget widget_archive">
+		<h3 class="widget-title">文章归档</h3>
+			<ul>		
+				<volist name="monthList" id="vo">			
+				<li><a href='__APP__/Home/tag/t/{$vo.pdate}' title='{$vo.pubdate}'>{$vo.pubdate}</a>&nbsp;<font style="color:#7a7a7a;">({$vo.num})</font></li>
+				</volist>
+			</ul>
+	</aside>
+	<aside id="categories-2" class="widget widget_categories">
+		<h3 class="widget-title">分类目录</h3>
+		<ul>
+			<volist name="menu" id="vo">
+				<li class="cat-item cat-item-2"><a href="__APP__/Home/category/id/{$vo.id}" title="{$vo.name}">{$vo.name}</a></li>
+			</volist>
+		</ul>
+	</aside>
+	<aside id="categories-2" class="widget widget_categories">
+		<h3 class="widget-title">热门标签(<font style="font-weight:normal;">字体越大表示标签越热门额</font>^-^)</h3>
+		<ul>
+			<li class="cat-item cat-item-2">
+				<volist name="hotTag" id="vo">
+				<a href="__APP__/Home/tag/tag/{$vo.tagname}" title="{$vo.tagname}" style="font-size:{$vo.size}px;text-decoration:none;">{$vo.tagname}</a> &nbsp;
+				</volist>
+			</li>
+		</ul>
+	</aside>		
+</div>

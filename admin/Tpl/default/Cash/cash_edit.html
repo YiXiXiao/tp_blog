@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>main</title>
+<link rel="stylesheet" type="text/css" href="{$Public}/css/article.css"/>
+</head>
+
+<body>
+	<div class="map">
+		首页管理&gt;&gt;现金账目管理&gt;&gt;<strong id="title">{$title}</strong>
+	</div>
+	
+	<ul>
+		<li class="selected"><a href="__URL__/index" class="selected">现金账目列表</a></li>
+		<li><a href="__URL__/addShow">新增现金账目</a></li>
+	</ul>
+	<form method="post" action="__URL__/modify">
+	<input type="hidden" name="id" value="{$oneCash.id}"/>
+	<div class="action">修改一条新账目</div>
+	<div class="addlist">记账日期：&nbsp;<input type="text" name="date" value="{$oneCash.date}" class="text"/></div>
+	<div class="addlist">凭&nbsp;证&nbsp;号：&nbsp;<input type="text" name="sn" value="{$oneCash.sn}" class="text"/></div>
+	<div class="addlist">项　　目：
+		<select name="name_id">
+            <option <php>if($oneCash['name_id']=='0'){echo 'selected="selected"';}</php> value="0">采购款</option>
+            <option <php>if($oneCash['name_id']=='1'){echo 'selected="selected"';}</php> value="1">邮递运输费用</option>
+            <option <php>if($oneCash['name_id']=='2'){echo 'selected="selected"';}</php> value="2">差旅费</option>
+            <option <php>if($oneCash['name_id']=='3'){echo 'selected="selected"';}</php> value="3">通讯费</option>
+			<option <php>if($oneCash['name_id']=='4'){echo 'selected="selected"';}</php> value="4">生活费</option>
+            <option <php>if($oneCash['name_id']=='5'){echo 'selected="selected"';}</php> value="5">办公耗材</option>
+            <option <php>if($oneCash['name_id']=='6'){echo 'selected="selected"';}</php> value="6">房屋水电等</option>
+            <option <php>if($oneCash['name_id']=='7'){echo 'selected="selected"';}</php> value="7">其它支出</option>
+            <option <php>if($oneCash['name_id']=='8'){echo 'selected="selected"';}</php> value="8">现金收入</option>
+		</select>
+	</div>
+	<div class="addlist">支　　出：&nbsp;<input type="text" name="cash_out" value="{$oneCash.cash_out}" class="text"/></div>
+	<div class="addlist">收　　入：&nbsp;<input type="text" name="cash_in" value="{$oneCash.cash_in}" class="text"/></div>
+	<div class="addlist" style="height:auto;">备　　注：&nbsp;<textarea name="desc">{$oneCash.desc}</textarea></div>
+
+	
+	<div class="addlist" style="margin:15px 0 0 0;padding:0 0 0 200px;"><input type="submit" name="send" value="确定修改" class="submit"/></div>
+	</form>
+</body>
+</html>
